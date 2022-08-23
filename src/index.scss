@@ -1,6 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import '~bootstrap/scss/bootstrap';
 @import "./styles/utilities/reset";
+@import "./styles/utilities/breakpoints";
 
 body {
   font-family: 'Roboto', sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+@media(min-width: ($breakpoint-xl + 1)) {
+  .max-width {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 }
