@@ -1,0 +1,51 @@
+@use "../../styles/utilities/variables" as *;
+@use "../../styles/utilities/breakpoints" as *;
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    height: 20vh;
+    width: 100%;
+    background: $secondary-color;
+    color: #fff;
+    padding: 2rem 0;
+}
+
+.links {
+    ul {
+        li {
+            margin-bottom: 0.5rem;
+
+            a {
+                font-size: 1rem;
+                color: #fff;
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+
+    .socials {
+        margin-top: 1rem;
+
+        a {
+            display: inline-block;
+            font-size: 1.5rem;
+            color: #fff;
+            margin-right: 0.5rem;
+            transition: 0.3s;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+@media(max-width: $breakpoint-sm) {
+    .footer {
+        height: 24vh;
+    }
+}

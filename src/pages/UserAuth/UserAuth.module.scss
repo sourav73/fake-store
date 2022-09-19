@@ -1,0 +1,70 @@
+@use "../../styles/utilities/variables" as *;
+@use "../../styles/utilities/breakpoints" as *;
+
+@mixin unsetBorder {
+    border: none;
+    border-radius: unset;
+}
+
+.authForm {
+    min-width: 350px;
+    max-width: 600px;
+    margin-inline: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 4rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.4);
+}
+
+.formGroup {
+    margin-top: 1rem
+}
+
+.tab {
+    @include unsetBorder;
+    justify-content: center;
+    background: #ff9371;
+    width: max-content;
+    margin: auto;
+    border-radius: 25px;
+
+    :global(.nav-item) {
+        @include unsetBorder;
+
+        :global(.nav-link) {
+            @include unsetBorder;
+            border-radius: 25px;
+            padding: 1rem 3rem;
+            font-size: 1.25rem;
+            color: #fff;
+
+            &:global(.active) {
+                background: $primary-color;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.error {
+    display: block;
+    margin-top: 4px;
+    padding-left: 8px;
+    font-size: 14px;
+    color: red;
+}
+
+.tab {
+    form {
+        button {
+            font-size: 1rem;
+        }
+    }
+}
+
+@media(max-width: $breakpoint-sm) {
+    .authForm {
+        padding: 1rem;
+    }
+}

@@ -1,0 +1,38 @@
+@use "../utilities/variables";
+@use "../utilities/gradiants" as g;
+
+@mixin grad-btn {
+    padding: 0.9rem 2.5rem;
+    font-size: 0.7rem;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    display: block;
+}
+
+.btn-grad {
+    @include grad-btn;
+    background-image: linear-gradient(45deg, #56CCF2 0%, #2F80ED 51%, #56CCF2 100%);
+
+    &:hover {
+        background-position: right center;
+        /* change the direction of the change here */
+        color: #fff;
+    }
+}
+
+.btn-grad2 {
+    @include grad-btn;
+    background-image: linear-gradient(to right, #000046 0%, #1CB5E0 51%, #000046 100%);
+
+    &:hover {
+        background-position: right center;
+        /* change the direction of the change here */
+        color: #fff;
+    }
+}

@@ -2,6 +2,12 @@
 @import '~bootstrap/scss/bootstrap';
 @import "./styles/utilities/reset";
 @import "./styles/utilities/breakpoints";
+@import "./styles/components/";
+@import "./styles/utilities/typography";
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -11,9 +17,33 @@ img {
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
+#root {
+  position: relative;
+  padding-bottom: 20vh;
+  min-height: 100vh;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px white inset !important;
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
 @media(min-width: ($breakpoint-xl + 1)) {
   .max-width {
     max-width: 1200px;
     margin: 0 auto;
+  }
+}
+
+@media(max-width: $breakpoint-sm) {
+  #root {
+    padding-bottom: 24vh;
   }
 }

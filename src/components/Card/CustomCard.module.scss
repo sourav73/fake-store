@@ -1,0 +1,41 @@
+@use "../../styles/utilities/variables" as *;
+
+.card {
+    height: 100%;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    text-align: center;
+    transition: 0.3s;
+
+    &:hover {
+        box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.3);
+    }
+}
+
+.cardImg {
+    height: 300px;
+    padding: 1rem;
+}
+
+.title {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+
+    &:hover {
+        color: $primary-color;
+    }
+}
+
+.category {
+    text-transform: capitalize;
+    font-size: 0.8rem;
+    color: #aaaaaa;
+    margin: 1rem 0;
+    display: block;
+}
+
+.price {
+    font-weight: 500;
+}
