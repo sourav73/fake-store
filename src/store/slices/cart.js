@@ -13,8 +13,6 @@ const cartSlice = createSlice({
       );
       if (itemInCart) {
         itemInCart.quantity += quantity;
-        console.log(quantity);
-        console.log(typeof quantity);
       } else state.cart.push(action.payload);
     }
   }

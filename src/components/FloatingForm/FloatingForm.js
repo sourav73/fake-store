@@ -7,19 +7,28 @@ const FloatingForm = ({
   name,
   value,
   handleChange,
-  handleBlur
+  className
 }) => {
   return (
-    <div className={styles.form}>
-      <input
-        type={type}
-        placeholder=" "
-        name={name}
-        value={value}
-        onChange={handleChange}
-        onBlur={handleBlur}
-      />
-      <label htmlFor="">
+    <div className={`${styles.form} ${className}`}>
+      {type === 'textarea' ? (
+        <textarea
+          name={name}
+          placeholder=" "
+          value={value}
+          onChange={handleChange}
+        ></textarea>
+      ) : (
+        <input
+          type={type}
+          placeholder=" "
+          name={name}
+          value={value}
+          onChange={handleChange}
+        />
+      )}
+
+      <label>
         <span>{label}</span>
       </label>
     </div>

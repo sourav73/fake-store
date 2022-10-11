@@ -1,0 +1,33 @@
+.crubmContainer {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-bottom: 1px solid #ccc;
+
+    ul {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+
+        li {
+            a {
+                font-size: 14px;
+                color: #000;
+
+                &.disabled {
+                    color: #ccc;
+                    pointer-events: none;
+                }
+            }
+
+            &::before {
+                content: "/";
+                margin-right: 8px;
+            }
+
+            &:first-child::before {
+                content: "";
+            }
+        }
+    }
+}

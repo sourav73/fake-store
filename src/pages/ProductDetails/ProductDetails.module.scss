@@ -1,62 +1,90 @@
-@import "../../styles/utilities/variables";
-@import "../../styles/utilities/mixins";
+@use "../../styles/utilities/variables" as *;
 
-.productGallery {
-    img {
-        height: 350px;
-        width: 300px;
+@mixin unsetBorder {
+    border: none;
+    border-radius: unset;
+}
+
+.productTitle {
+    font-size: 1.4rem;
+    color: #3749bb;
+}
+
+.productPrice {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+
+    span {
+        font-weight: 600;
     }
 }
 
-.title {
-    @include heading-style(1.5rem, $primary-text);
+.quantityForm {
+    display: flex;
+    gap: 1rem;
 }
 
-.category {
-    text-transform: capitalize;
-    color: $secondary-text;
-}
+.quantityGroup {
+    display: flex;
 
-.quantity {
     button {
-        background: none;
-        padding: 0.3rem 0.6rem;
+        border: none;
+        background: transparent;
+        padding-inline: 1rem;
+        font-size: 1.5rem;
         border: 1px solid #ccc;
 
+        &:hover {
+            background: #ccc;
+        }
+
         &:first-child {
-            padding: 0.3rem 0.7rem;
+            border-right: none;
+        }
+
+        &:last-child {
+            border-left: none;
         }
     }
 
     input {
-        outline: none;
-        border: 1px solid #ccc;
-        width: 2.5rem;
+        width: 60px;
         text-align: center;
+        border: 1px solid #ccc;
+
+        &:focus {
+            outline: none;
+        }
     }
 }
 
-.infoTab {
-    :global(.nav-tabs) {
-        button {
-            color: $primary-text;
+.submitBtn {
+    padding-block: 0.8rem;
+}
+
+// Tab styles
+.tab {
+    @include unsetBorder;
+    margin-top: 2rem;
+
+    :global(.nav-item) {
+        @include unsetBorder;
+
+        :global(.nav-link) {
+            @include unsetBorder;
+            color: $secondary-light;
+            margin-bottom: 1.5rem;
+            padding-inline: 0;
+            margin-right: 1rem;
 
             &:global(.active) {
-                color: $secondary-text;
-            }
-
-            &:hover {
-                color: $primary-dark;
+                color: $primary-color;
+                border-bottom: 2px solid $primary-color;
             }
         }
     }
 }
 
-.review {
-    textarea {
-        &:global(.form-control) {
-            height: 7rem;
-            resize: none;
-        }
-    }
+.descriptionText {
+    line-height: 1.75;
 }

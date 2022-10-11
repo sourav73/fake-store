@@ -1,9 +1,9 @@
 import React from 'react';
 import { Tab, Tabs } from 'react-bootstrap';
 import FloatingForm from '../../components/FloatingForm/FloatingForm';
+import styles from './Signup.module.scss';
 import { useFormik } from 'formik';
 import { loginSchema, signupSchema } from '../../schemas';
-import styles from './UserAuth.module.scss';
 
 const Signup = () => {
   const signupFormik = useFormik({
